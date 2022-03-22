@@ -9,7 +9,7 @@ const Movies = ({movies, handleClick}) => {
             <img src={movie.image} height="100px" alt={movie.title}/>
           </div>
           <span>
-            <button className="movie-watched" onClick={()=> {
+            <button className="movie-title" onClick={()=> {
               handleClick(movie, index);
             }}>
               {movie.title}
