@@ -34,41 +34,15 @@ export function getAllMovies() {
 	}
 }
 
-export function add(title, description, image) {
-	var movie = {};
-	movie.title = title;
-	movie.description = description;
-	movie.image = image;
-
-	var movies = getAllMovies();
-	movies.push(movie);
-
+export function add({ movies }) {
 	localStorage.setItem('movies-all', JSON.stringify(movies));
 }
 
-export function addWatchedMovie(title, description, image) {
-	var movie = {};
-	movie.title = title;
-	movie.description = description;
-	movie.image = image;
-
-	var movies = getWatchedMovies();
-	movies.push(movie);
-
+export function addWatchedMovie({ movies }) {
 	localStorage.setItem('movies-watched', JSON.stringify(movies));
 }
 
 
-export function removeWatchedMovie(title) {
-	var movies = getWatchedMovies();
-
-	// Instead of looping on every removal, use splice method and useState hook
-	for (var i = 0; i < movies.length; i++) {
-	   if (!movies[i]) continue;
-		if (movies[i].title == title) {
-			movies[i] = null
-		}
-	}
-
+export function removeWatchedMovie({ movies }) {
 	localStorage.setItem('movies-watched', JSON.stringify(movies));
 }
