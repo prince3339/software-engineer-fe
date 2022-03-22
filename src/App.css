@@ -35,4 +35,17 @@ img {
 .movie-title {
   background: none;
   cursor: pointer;
+  font-weight: bold;;
+  border: none;
+}
+
+.movies-list {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.button {
+  margin-top: 20px;
+  padding: 8px;
 }

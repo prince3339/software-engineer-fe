@@ -64,7 +64,7 @@ function App() {
         <b>IMAGE URL:<br /><input type="url" required onChange={(e)=> setMovie({...movie, imageUrl: e.target.value})} /></b><br />
         <b>COMMENT:<br /><input type="text" onChange={(e)=> setMovie({...movie, comment: e.target.value})} /></b><br />
 
-        <button type="submit">ADD MOVIE</button>
+        <button className='button' type="submit">ADD MOVIE</button>
       </form>
 
 

@@ -2,9 +2,9 @@ import React from "react";
 
 const Movies = ({movies, handleClick}) => {
   return (
-    <div>
+    <div className="movies-list">
       {movies?.map((movie, index) => (
-        <div className="movies" key={movie.title}>
+        <div className="movie" key={movie.title}>
           <div>
             <img src={movie.image} height="100px" alt={movie.title}/>
           </div>
