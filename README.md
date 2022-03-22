@@ -1,5 +1,9 @@
 ## JS/React app cleanup
 
+### ** NOTES:
+I missed one important comment on my commit regaring bad practices:
+* Use at least minimum form validation so that emty movies can not be added
+
 Jenny is a newbie developer that has decided to learn Javascript and React. She wrote this simple application to keep track of which movies she wants to see, and which ones she has seen.
 
 She knows it is not great, and she has now asked you to take a look at it, to give feedback and pointers. She also wants to see how she could have done it in a better way.
