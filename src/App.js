@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { addWatchedMovie, add, removeWatchedMovie, getWatchedMovies, getAllMovies } from './index.js';
+import { addWatchedMovie, add, removeWatchedMovie, getWatchedMovies, getAllMovies } from './api';
 
 // Move this component to a seprate file and define which props it accepts
 const getMoviesComponents = (movies) => {
