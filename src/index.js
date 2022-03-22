@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+// We should avoid circular dependencies
+// This index.js file is being used/imported in App.js and vice versa
+// What we can do is, we can create a separate API folder and move all the API/methods there.
 import App from './App';
 
+// In real application data will be fetched in a asynchronous way
+// Use it like a async function with a Promise so that in future in can just update the data source
 export function getWatchedMovies() {
 	var movies = localStorage.getItem('movies-watched');
 
@@ -13,6 +18,8 @@ export function getWatchedMovies() {
 	}
 }
 
+// In real application data will be fetched in a asynchronous way
+// Use it like a async function with a Promise so that in future in can just update the data source
 export function getAllMovies() {
 	var movies = localStorage.getItem('movies-all');
 
@@ -39,6 +46,14 @@ export function getAllMovies() {
 	}
 }
 
+
+// In real application data will be saved/stored in a asynchronous way
+// Use it like a async function with a Promise
+// Add method's responsibilty should be only adding not fetch + add
+// Since we don't have real backend API at this point, what we can do is pass the modified data from the component and just store it here
+// Another important thing is that, we should not explicitly call render method here
+// React should update the UI when you use useState hook
+
 export function add(title, description, image) {
 	var movie = {};
 	movie.title = title;
@@ -53,6 +68,13 @@ export function add(title, description, image) {
 	render();
 }
 
+
+// In real application data will be saved/stored in a asynchronous way
+// Use it like a async function with a Promise
+// Add method's responsibilty should be only adding not fetch + add
+// Since we don't have real backend API at this point, what we can do is pass the modified data from the component and just store it here
+// Another important thing is that, we should not explicitly call render method here
+// React should update the UI when you use useState hook
 export function addWatchedMovie(title, description, image) {
 	var movie = {};
 	movie.title = title;
@@ -67,9 +89,18 @@ export function addWatchedMovie(title, description, image) {
 	render();
 }
 
+
+// In real application data will be removed/stored in a asynchronous way
+// Use it like a async function with a Promise
+// Add method's responsibilty should be only adding not fetch + add
+// Since we don't have real backend API at this point, what we can do is pass the modified data from the component and just store it here
+// Another important thing is that, we should not explicitly call render method here
+// React should update the UI when you use useState hook
+
 export function removeWatchedMovie(title) {
 	var movies = getWatchedMovies();
 
+	// Instead of looping on every removal, use splice method and useState hook
 	for (var i = 0; i < movies.length; i++) {
 	   if (!movies[i]) continue;
 		if (movies[i].title == title) {
@@ -82,6 +113,7 @@ export function removeWatchedMovie(title) {
 	render();
 }
 
+// Instead of wrapping it in render function, we can simplty use ReactDOM.render since it won't be reuse
 function render() {
 	ReactDOM.render(<App movies={getAllMovies()} watched={getWatchedMovies()} />, document.getElementById('root'))
 }

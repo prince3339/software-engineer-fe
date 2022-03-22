@@ -1,3 +1,7 @@
+
+/* We can move this styles to App.css and remove this file
+Or we can split component specific css file and move specific codes to specific files */
+
 body {
   background-color: #ddf;
   margin: 0;
